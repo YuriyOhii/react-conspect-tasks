@@ -1,7 +1,6 @@
 import { Component } from "react";
-import axios from "axios";
+import api from "./components/api";
 import { ArticlesList } from "./components/ArticlesList";
-axios.defaults.baseURL = "https://hn.algolia.com/api/v1";
 
 export class App extends Component {
   state = {
@@ -13,12 +12,12 @@ export class App extends Component {
   async componentDidMount() {
     try {
       this.setState({ isLoading: true });
-      const response = await axios.get("search?qury=react");
-      this.setState({ articles: response.data.hits });
-    } catch(error) {
+      const articles =await api.fetchQuery('react');
+      this.setState({ articles });
+    } catch (error) {
       this.setState({ error });
     } finally {
-      this.setState({isLoading: false});
+      this.setState({ isLoading: false });
     }
   }
 
@@ -26,7 +25,12 @@ export class App extends Component {
     const { articles, isLoading, error } = this.state;
     return (
       <>
-      {error && <p>Whoopss... something went wrong!</p>}
+        {error && (
+          <p>
+            Whoopss... something went wrong!
+            {error.message}
+          </p>
+        )}
         {isLoading && <p>Loading...</p>}
 
         {articles.length > 0 ? <ArticlesList articles={articles} /> : null}
