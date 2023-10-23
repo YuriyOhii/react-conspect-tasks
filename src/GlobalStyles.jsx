@@ -1,6 +1,8 @@
-@import-normalize;
+import {createGlobalStyle} from 'styled-components';
+import 'modern-normalize';
 
-body {
+export const GlobalStyles = createGlobalStyle`
+    body {
   font-family: sans-serif;
   line-height: 1.5;
   }
@@ -19,3 +21,4 @@ body {
     max-width: 100%;
     height: auto;
   }
+`
