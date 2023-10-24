@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import {} from "./About.styled";
 import { Link, Outlet } from "react-router-dom";
-export const About = (props) => {
+export const  About = () => {
   return (
     <main>
       <h1>About us</h1>
@@ -19,13 +18,11 @@ export const About = (props) => {
         eaque voluptatibus eveniet error, nulla rem iusto?
       </p>
       <ul>
-        <li><Link to={"mission"}>Mission</Link></li>
-        <li><Link to={"team"}>Team</Link></li>
-        <li><Link to={"reviews"}>Reviews</Link></li>
+        <li><Link to={"mission"}>Read about our mission</Link></li>
+        <li><Link to={"team"}>Get to know the team</Link></li>
+        <li><Link to={"reviews"}>Go through the reviews</Link></li>
       </ul>
       <Outlet/>
     </main>
   );
 };
-
-About.propTypes = {};
