@@ -12,7 +12,8 @@ import AdminLayout from "./AdminLayout";
 import Sales from "./pages/Sales";
 import Customer from "./pages/Customer";
 export const App = () => {
-  return (
+   return (
+   <>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -30,5 +31,6 @@ export const App = () => {
         </Route>
       </Route>
     </Routes>
+   </>
   );
 };

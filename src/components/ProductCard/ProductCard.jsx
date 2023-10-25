@@ -3,7 +3,6 @@ import { Card } from "./ProductCard.styled";
 import { Link } from "react-router-dom";
 
 export const ProductCard = ({ item }) => {
-  console.log(item);
   return (
     <Link to={`/products/${item.id}`}>
       <Card>

@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { ProductCard } from "../ProductCard";
 import { List } from "./ProductList.styled";
 export const ProductList = ({ products }) => {
-  console.log(products);
   return (
     <List>
       {products.map((el) => (
