@@ -9,12 +9,7 @@ export const SearchBox = ({ onChange, value }) => {
   return (
     <div>
       <HiOutlineSearch />
-      <input
-        type="text"
-        value={value}
-        name="name"
-        onChange={handleChange}
-      />
+      <input type="text" value={value} name="name" onChange={handleChange} />
     </div>
   );
 };
