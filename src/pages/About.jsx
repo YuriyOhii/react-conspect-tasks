@@ -1,6 +1,6 @@
-import {} from "./About.styled";
+import { Suspense } from "react";
 import { Link, Outlet } from "react-router-dom";
-export const  About = () => {
+export default function About() {
   return (
     <main>
       <h1>About us</h1>
@@ -18,11 +18,19 @@ export const  About = () => {
         eaque voluptatibus eveniet error, nulla rem iusto?
       </p>
       <ul>
-        <li><Link to={"mission"}>Read about our mission</Link></li>
-        <li><Link to={"team"}>Get to know the team</Link></li>
-        <li><Link to={"reviews"}>Go through the reviews</Link></li>
+        <li>
+          <Link to={"mission"}>Read about our mission</Link>
+        </li>
+        <li>
+          <Link to={"team"}>Get to know the team</Link>
+        </li>
+        <li>
+          <Link to={"reviews"}>Go through the reviews</Link>
+        </li>
       </ul>
-      <Outlet/>
+      <Suspense fallback={<div>LOADING...</div>}>
+        <Outlet />
+      </Suspense>
     </main>
   );
-};
+}

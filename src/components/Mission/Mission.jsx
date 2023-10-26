@@ -1,4 +1,4 @@
-export const Mission = (props) => {
+export default function Mission() {
   return (
     <section>
       <h2>Our mission</h2>

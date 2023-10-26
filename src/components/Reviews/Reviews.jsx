@@ -1,4 +1,4 @@
-export const Reviews = (props) => {
+export default function Reviews() {
   return (
     <section>
       <ul>

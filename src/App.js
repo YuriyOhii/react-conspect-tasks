@@ -1,16 +1,28 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Products } from "./pages/Products";
-import { NotFoundPage } from "./pages/NotFoundPage";
-import { ProductDetails } from "./pages/ProductDetails";
-import { Mission } from "./components/Mission/Mission";
-import { Team } from "./components/Team/Team";
-import { Reviews } from "./components/Reviews/Reviews";
+import { lazy } from 'react'
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Products from "./pages/Products";
+// import NotFoundPage from "./pages/NotFoundPage";
+// import ProductDetails from "./pages/ProductDetails/ProductDetails";
+// import Mission from "./components/Mission/Mission";
+// import Team from "./components/Team/Team";
+// import Reviews from "./components/Reviews/Reviews";
 import AdminLayout from "./AdminLayout";
 import Sales from "./pages/Sales";
 import Customer from "./pages/Customer";
+
+const Home = lazy(()=>import("./pages/Home"));
+const About = lazy(()=>import("./pages/About"));
+const Products = lazy(()=>import("./pages/Products"));
+const NotFoundPage = lazy(()=>import("./pages/NotFoundPage"));
+const ProductDetails = lazy(()=>import("./pages/ProductDetails/ProductDetails"));
+const Mission = lazy(()=>import("./components/Team/Team"));
+const Team = lazy(()=>import("./pages/Home"));
+const Reviews = lazy(()=>import("./components/Reviews/Reviews"));
+
+
 export const App = () => {
   return (
     <>

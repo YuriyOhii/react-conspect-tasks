@@ -1,10 +1,9 @@
-import {} from "./Products.styled";
 import { useSearchParams } from "react-router-dom";
-import { getProducts } from "../../services/api";
-import { ProductList } from "../../components/ProductList/ProductList";
-import { SearchBox } from "../../components/SearchBox/SearchBox";
+import { getProducts } from "../services/api";
+import { ProductList } from "../components/ProductList/ProductList";
+import { SearchBox } from "../components/SearchBox/SearchBox";
 
-export const Products = (props) => {
+export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
   const nameParam = searchParams.get("name") ?? "";
   const products = getProducts();
@@ -24,4 +23,4 @@ export const Products = (props) => {
       <ProductList products={filteredProducts} />
     </main>
   );
-};
+}

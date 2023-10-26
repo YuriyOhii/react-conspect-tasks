@@ -1,6 +1,4 @@
-import {} from "./Home.styled";
-
-export const Home = (props) => {
+export default function Home() {
   return (
     <main>
       <h1>Welcome</h1>
@@ -12,4 +10,4 @@ export const Home = (props) => {
       </p>
     </main>
   );
-};
+}

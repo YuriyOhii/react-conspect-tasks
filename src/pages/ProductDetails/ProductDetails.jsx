@@ -2,7 +2,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { getProductById } from "../../services/api";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { BackLink } from "./ProductDetails.styled";
-export const ProductDetails = () => {
+export default function ProductDetails() {
   const { id } = useParams();
   const product = getProductById(id);
   const location = useLocation();
@@ -28,4 +28,4 @@ export const ProductDetails = () => {
       </p>
     </div>
   );
-};
+}

@@ -1,4 +1,4 @@
-export const Team = props => {
+export default function Team() {
     return (
       <section>
         <ul>

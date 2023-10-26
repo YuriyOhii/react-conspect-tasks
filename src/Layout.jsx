@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { HiOutlineShoppingBag } from "react-icons/hi";
+import { Suspense } from "react";
 
 export const StyledNav = styled(NavLink)`
   color: ${({ theme }) => theme.colors.black};
@@ -13,30 +14,33 @@ export const StyledNav = styled(NavLink)`
   }
 `;
 
-export const Layout = () =>{
-  return <Container>
-  <header>
-      <nav>
-        <Link to={"/"}>
-          <HiOutlineShoppingBag />
-        </Link>
-        <Menu>
-          <li>
-            <StyledNav to={"/"}>Home</StyledNav>
-          </li>
-          <li>
-            <StyledNav to={"/about"}>About</StyledNav>
-          </li>
-          <li>
-            <StyledNav to={"/products"}>Products</StyledNav>
-          </li>
-        </Menu>
-      </nav>
-    </header>
-    <Outlet/>
-</Container>
-}
-
+export const Layout = () => {
+  return (
+    <Container>
+      <header>
+        <nav>
+          <Link to={"/"}>
+            <HiOutlineShoppingBag />
+          </Link>
+          <Menu>
+            <li>
+              <StyledNav to={"/"}>Home</StyledNav>
+            </li>
+            <li>
+              <StyledNav to={"/about"}>About</StyledNav>
+            </li>
+            <li>
+              <StyledNav to={"/products"}>Products</StyledNav>
+            </li>
+          </Menu>
+        </nav>
+      </header>
+      <Suspense fallback={<div>LOADING...</div>}>
+        <Outlet />
+      </Suspense>
+    </Container>
+  );
+};
 
 export const Menu = styled.ul`
   display: flex;
