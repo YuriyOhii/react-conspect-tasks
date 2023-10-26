@@ -13,4 +13,3 @@ export const Home = (props) => {
     </main>
   );
 };
-
