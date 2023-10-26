@@ -1,11 +1,15 @@
-import { useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getProductById } from "../../services/api";
-
+import { HiArrowNarrowLeft } from 'react-icons/hi';
+import { BackLink } from './ProductDetails.styled'
 export const ProductDetails = () => {
   const { id } = useParams();
   const product = getProductById(id);
+  const location = useLocation();
+  const backLink = location.state?.from ?? "/products"
   return (
     <div>
+      <BackLink to={backLink}><HiArrowNarrowLeft/>Back to products</BackLink>
       <img src="https://via.placeholder.com/960x240" alt="Grey backdrop" />
       <h3>
         {" "}

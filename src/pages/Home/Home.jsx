@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import {} from "./Home.styled";
 
 export const Home = (props) => {
@@ -15,4 +14,3 @@ export const Home = (props) => {
   );
 };
 
-Home.propTypes = {};
